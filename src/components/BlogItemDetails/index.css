@@ -1,1 +1,26 @@
-/* Write your CSS code here */
+.blog-item-details-container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+.blog-item-details-image {
+  width: 100%;
+  border-radius: 8px;
+}
+.description {
+  color: ray;
+}
+.blog-item-details-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.blog-item-details-profile-container {
+  display: flex;
+  align-items: center;
+}
+.blog-item-details-avatar {
+  width: 20px;
+}
+.blog-item-details-author-name {
+  color: gray;
+}

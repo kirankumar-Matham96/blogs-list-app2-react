@@ -36,12 +36,6 @@ class BlogItemDetails extends Component {
 
     return (
       <div className="blog-item-details-container">
-        <img
-          src={blogItemData.imageUrl}
-          alt="blog"
-          className="blog-item-details-image"
-        />
-        <p className="blog-item-details-topic">{blogItemData.topic}</p>
         <p className="blog-item-details-title">{blogItemData.title}</p>
         <div className="blog-item-details-profile-container">
           <img
@@ -51,6 +45,12 @@ class BlogItemDetails extends Component {
           />
           <p className="blog-item-details-author-name">{blogItemData.author}</p>
         </div>
+        <img
+          src={blogItemData.imageUrl}
+          alt="blog"
+          className="blog-item-details-image"
+        />
+        <p className="description">Some text...</p>
       </div>
     )
   }

@@ -1,3 +1,4 @@
+import {Loader} from 'react-loader-spinner'
 import {Component} from 'react'
 import BlogItem from '../BlogItem'
 import './index.css'
@@ -22,17 +23,18 @@ class BlogList extends Component {
 
   render() {
     const {blogsList, isLoading} = this.state
-
     return (
-      <div className="blogs-list-container">
-        {isLoading
-          ? blogsList.map(eachBlog => (
-              <BlogItem blogDetails={eachBlog} key={eachBlog.id} />
-            ))
-          : blogsList.map(eachBlog => (
-              <BlogItem blogDetails={eachBlog} key={eachBlog.id} />
-            ))}
-      </div>
+      <ul className="blogs-list-container">
+        {isLoading ? (
+          <div testid="loader">
+            <Loader type="TailSpin" color="#00bfff" height={50} width={50} />
+          </div>
+        ) : (
+          blogsList.map(eachBlog => (
+            <BlogItem blogDetails={eachBlog} key={eachBlog.id} />
+          ))
+        )}
+      </ul>
     )
   }
 }
