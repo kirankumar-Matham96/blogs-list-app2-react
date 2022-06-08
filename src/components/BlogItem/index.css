@@ -20,14 +20,16 @@
 .blog-item-title {
   font-size: 20px;
   font-weight: bold;
+  color: #000;
 }
 .blog-item-profile-container {
   display: flex;
   align-items: center;
 }
 .blog-item-avatar {
-  width: 50px;
+  width: 30px;
   margin-right: 5px;
+  border-radius: 100px;
 }
 .blog-item-author-name {
   color: gray;
