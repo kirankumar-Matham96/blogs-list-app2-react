@@ -14,9 +14,11 @@ class BlogList extends Component {
   }
 
   getBlogsList = async () => {
-    const response = await fetch('https://apis.ccbp.in/blogs').then(res =>
-      res.json(),
-    )
+    // const response = await fetch('https://apis.ccbp.in/blogs').then(res =>
+    //   res.json(),
+    // )
+    const initialResponse = await fetch('https://apis.ccbp.in/blogs')
+    const response = await initialResponse.json()
     this.setState({blogsList: response, isLoading: false})
   }
 
