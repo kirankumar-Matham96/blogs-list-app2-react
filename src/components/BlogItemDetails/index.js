@@ -26,6 +26,7 @@ class BlogItemDetails extends Component {
       imageUrl: response.image_url,
       title: response.title,
       topic: response.topic,
+      content: response.content,
     }
     this.setState({blogItemData: updatedBlogDetails, isLoading: false})
   }
@@ -36,7 +37,7 @@ class BlogItemDetails extends Component {
 
     return (
       <div className="blog-item-details-container">
-        <p className="blog-item-details-title">{blogItemData.title}</p>
+        <h1 className="blog-item-details-title">{blogItemData.title}</h1>
         <div className="blog-item-details-profile-container">
           <img
             src={blogItemData.avatarUrl}
@@ -47,10 +48,10 @@ class BlogItemDetails extends Component {
         </div>
         <img
           src={blogItemData.imageUrl}
-          alt="blog"
+          alt={blogItemData.title}
           className="blog-item-details-image"
         />
-        <p className="description">Some text...</p>
+        <p className="description">{blogItemData.content}</p>
       </div>
     )
   }

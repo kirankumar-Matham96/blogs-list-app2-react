@@ -1,4 +1,4 @@
-import {Loader} from 'react-loader-spinner'
+import Loader from 'react-loader-spinner'
 import {Component} from 'react'
 import BlogItem from '../BlogItem'
 import './index.css'
@@ -17,18 +17,22 @@ class BlogList extends Component {
     const response = await fetch('https://apis.ccbp.in/blogs').then(res =>
       res.json(),
     )
-    console.log({response})
     this.setState({blogsList: response, isLoading: false})
   }
 
   render() {
-    // const {blogsList, isLoading} = this.state
-    const {blogsList} = this.state
+    const {blogsList, isLoading} = this.state
     return (
       <ul className="blogs-list-container">
-        {blogsList.map(eachBlog => (
-          <BlogItem blogDetails={eachBlog} key={eachBlog.id} />
-        ))}
+        {!isLoading ? (
+          blogsList.map(eachBlog => (
+            <BlogItem blogDetails={eachBlog} key={eachBlog.id} />
+          ))
+        ) : (
+          <div testid="loader">
+            <Loader type="TailSpin" color="#00bfff" height={50} width={50} />
+          </div>
+        )}
       </ul>
     )
   }

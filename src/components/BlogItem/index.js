@@ -21,15 +21,17 @@ const BlogItem = props => {
           alt="blog"
           className="blog-item-image"
         />
-        <p className="blog-item-topic">{updatedBlogDetails.topic}</p>
-        <p className="blog-item-title">{updatedBlogDetails.title}</p>
-        <div className="blog-item-profile-container">
-          <img
-            src={updatedBlogDetails.avatarUrl}
-            alt="avatar"
-            className="blog-item-avatar"
-          />
-          <p className="blog-item-author-name">{updatedBlogDetails.author}</p>
+        <div>
+          <p className="blog-item-topic">{updatedBlogDetails.topic}</p>
+          <h1 className="blog-item-title">{updatedBlogDetails.title}</h1>
+          <div className="blog-item-profile-container">
+            <img
+              src={updatedBlogDetails.avatarUrl}
+              alt="avatar"
+              className="blog-item-avatar"
+            />
+            <p className="blog-item-author-name">{updatedBlogDetails.author}</p>
+          </div>
         </div>
       </li>
     </Link>
